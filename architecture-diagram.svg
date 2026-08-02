@@ -1,0 +1,92 @@
+<svg viewBox="0 0 900 1500" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4A5568"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="1500" fill="#FAFAFA"/>
+  <text x="450" y="45" text-anchor="middle" font-size="26" font-weight="700" fill="#1A202C">Customer Churn Analytics Platform</text>
+  <text x="450" y="72" text-anchor="middle" font-size="14" fill="#718096">End-to-End Architecture</text>
+
+  <!-- Node template repeated -->
+  <!-- 1 -->
+  <rect x="300" y="100" width="300" height="60" rx="10" fill="#EBF8FF" stroke="#3182CE" stroke-width="2"/>
+  <text x="450" y="127" text-anchor="middle" font-size="15" font-weight="600" fill="#2C5282">Raw Superstore Dataset</text>
+  <text x="450" y="146" text-anchor="middle" font-size="12" fill="#4A5568">9,994 order records (CSV)</text>
+  <line x1="450" y1="160" x2="450" y2="190" stroke="#4A5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 2 -->
+  <rect x="300" y="190" width="300" height="60" rx="10" fill="#F0FFF4" stroke="#38A169" stroke-width="2"/>
+  <text x="450" y="217" text-anchor="middle" font-size="15" font-weight="600" fill="#276749">Data Cleaning</text>
+  <text x="450" y="236" text-anchor="middle" font-size="12" fill="#4A5568">Nulls, duplicates, type fixes</text>
+  <line x1="450" y1="250" x2="450" y2="280" stroke="#4A5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 3 -->
+  <rect x="300" y="280" width="300" height="60" rx="10" fill="#F0FFF4" stroke="#38A169" stroke-width="2"/>
+  <text x="450" y="307" text-anchor="middle" font-size="15" font-weight="600" fill="#276749">Feature Engineering</text>
+  <text x="450" y="326" text-anchor="middle" font-size="12" fill="#4A5568">RFM base fields derived</text>
+  <line x1="450" y1="340" x2="450" y2="370" stroke="#4A5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 4 -->
+  <rect x="300" y="370" width="300" height="60" rx="10" fill="#FFFAF0" stroke="#DD6B20" stroke-width="2"/>
+  <text x="450" y="397" text-anchor="middle" font-size="15" font-weight="600" fill="#9C4221">Exploratory Data Analysis</text>
+  <text x="450" y="416" text-anchor="middle" font-size="12" fill="#4A5568">Distributions, trends, outliers</text>
+  <line x1="450" y1="430" x2="450" y2="460" stroke="#4A5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 5 -->
+  <rect x="300" y="460" width="300" height="60" rx="10" fill="#FFFAF0" stroke="#DD6B20" stroke-width="2"/>
+  <text x="450" y="487" text-anchor="middle" font-size="15" font-weight="600" fill="#9C4221">SQL Analytics</text>
+  <text x="450" y="506" text-anchor="middle" font-size="12" fill="#4A5568">Business-question queries</text>
+  <line x1="450" y1="520" x2="450" y2="550" stroke="#4A5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 6 -->
+  <rect x="275" y="550" width="350" height="60" rx="10" fill="#FAF5FF" stroke="#805AD5" stroke-width="2"/>
+  <text x="450" y="577" text-anchor="middle" font-size="15" font-weight="600" fill="#553C9A">RFM Analysis &amp; Segmentation</text>
+  <text x="450" y="596" text-anchor="middle" font-size="12" fill="#4A5568">9,994 orders → 793 customer profiles</text>
+  <line x1="450" y1="610" x2="450" y2="640" stroke="#4A5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 7 -->
+  <rect x="250" y="640" width="400" height="80" rx="10" fill="#FFF5F5" stroke="#E53E3E" stroke-width="2"/>
+  <text x="450" y="668" text-anchor="middle" font-size="15" font-weight="600" fill="#9B2C2C">Machine Learning</text>
+  <text x="450" y="688" text-anchor="middle" font-size="12" fill="#4A5568">Naive Bayes · KNN · Random Forest</text>
+  <text x="450" y="705" text-anchor="middle" font-size="12" fill="#4A5568">Proxy churn label: recency &gt; 90 days</text>
+  <line x1="450" y1="720" x2="450" y2="750" stroke="#4A5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 8 -->
+  <rect x="300" y="750" width="300" height="60" rx="10" fill="#FFF5F5" stroke="#E53E3E" stroke-width="2"/>
+  <text x="450" y="777" text-anchor="middle" font-size="15" font-weight="600" fill="#9B2C2C">Random Forest Model</text>
+  <text x="450" y="796" text-anchor="middle" font-size="12" fill="#4A5568">99.37% accuracy · 99.30% F1</text>
+
+  <!-- Split into two branches -->
+  <line x1="450" y1="810" x2="450" y2="840" stroke="#4A5568" stroke-width="2"/>
+  <line x1="450" y1="840" x2="250" y2="840" stroke="#4A5568" stroke-width="2"/>
+  <line x1="450" y1="840" x2="650" y2="840" stroke="#4A5568" stroke-width="2"/>
+  <line x1="250" y1="840" x2="250" y2="870" stroke="#4A5568" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="650" y1="840" x2="650" y2="870" stroke="#4A5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 9a -->
+  <rect x="100" y="870" width="300" height="70" rx="10" fill="#E6FFFA" stroke="#319795" stroke-width="2"/>
+  <text x="250" y="898" text-anchor="middle" font-size="15" font-weight="600" fill="#234E52">Streamlit Web App</text>
+  <text x="250" y="917" text-anchor="middle" font-size="12" fill="#4A5568">Live churn prediction form</text>
+  <text x="250" y="933" text-anchor="middle" font-size="12" fill="#4A5568">Business recommendations</text>
+
+  <!-- 9b -->
+  <rect x="500" y="870" width="300" height="70" rx="10" fill="#FFFFF0" stroke="#D69E2E" stroke-width="2"/>
+  <text x="650" y="898" text-anchor="middle" font-size="15" font-weight="600" fill="#975A16">Power BI Dashboard</text>
+  <text x="650" y="917" text-anchor="middle" font-size="12" fill="#4A5568">4 pages · interactive KPIs</text>
+  <text x="650" y="933" text-anchor="middle" font-size="12" fill="#4A5568">Executive · Churn · RFM · Sales</text>
+
+  <line x1="250" y1="940" x2="250" y2="970" stroke="#4A5568" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="650" y1="940" x2="650" y2="970" stroke="#4A5568" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="250" y1="970" x2="450" y2="970" stroke="#4A5568" stroke-width="2"/>
+  <line x1="650" y1="970" x2="450" y2="970" stroke="#4A5568" stroke-width="2"/>
+  <line x1="450" y1="970" x2="450" y2="1000" stroke="#4A5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 10 final -->
+  <rect x="250" y="1000" width="400" height="70" rx="10" fill="#1A202C"/>
+  <text x="450" y="1030" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">Business Value</text>
+  <text x="450" y="1050" text-anchor="middle" font-size="12" fill="#CBD5E0">Identify at-risk customers, prioritize retention</text>
+
+  <text x="450" y="1110" text-anchor="middle" font-size="11" fill="#A0AEC0">github.com/rumman49/Customer-Churn-Analytics-Platform</text>
+</svg>
