@@ -181,7 +181,7 @@ streamlit run App/app.py
 ## 👤 Author
 
 **Romaan Uddin Siddiqui**
-[GitHub](https://github.com/rumman49) · [LinkedIn](https://www.linkedin.com/in/romaan-siddiqui/) · [Instagram](https://instagram.com/rumman_siddiqui_46) · [Live App](https://customer-churn-analytics-platform-htduxknihzebrsypvldp7f.streamlit.app/)
+[GitHub](https://github.com/rumman49) · [LinkedIn](https://www.linkedin.com/in/romaan-siddiqui/) · [Live App](https://customer-churn-analytics-platform-htduxknihzebrsypvldp7f.streamlit.app/)
 
 ## 📄 License
 
