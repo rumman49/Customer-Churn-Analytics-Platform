@@ -86,43 +86,73 @@ Customer-Churn-Analytics-Platform/
 
 ## 🤖 Machine Learning
 
-Three classification models were trained and compared on the customer-level dataset:
+Three classification models were trained and compared on the customer-level dataset (test set: 159 customers — 87 not-churned, 72 churned):
 
 | Model | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
 |---|---|---|---|---|---|
 | Naive Bayes | 90.57% | 90.14% | 88.89% | 89.51% | 0.9042 |
 | K-Nearest Neighbors (KNN) | 91.19% | 95.31% | 84.72% | 89.71% | 0.9064 |
-| **Random Forest (best)** | **99.37%** | **100.00%** | **98.61%** | **99.30%** | **0.9931** |
+| **Random Forest (best)** | **99.37%** | **100%** | **98.61%** | **99.30%** | **0.9931** |
 
-Test set size: 159 customers (87 not-churned, 72 churned).
+**Why Random Forest:** it consistently outperformed the other two models across every metric and handled the mix of RFM-derived features well without heavy tuning.
 
-**Why Random Forest:** it consistently outperformed the other two models across accuracy and F1-score, and handles the mix of scaled numeric RFM features well without heavy tuning.
+**Feature Importance:**
+
+![Feature Importance](Images/feature-importance.jpg)
+
+`recency` (0.517) and `r_score` (0.31) together account for over 80% of the model's decision-making. This is expected — and important — because the churn label itself was derived from recency (see Limitation below). This chart is the clearest evidence of *why* the model performs so well.
 
 ## 📈 Power BI Dashboard
 
-A 4-page interactive dashboard:
-1. **Executive Overview** — high-level KPIs (customers, revenue, churn rate)
-2. **Customer Churn Analysis** — churn distribution and drivers
-3. **Customer RFM Analysis** — segment breakdown (Champions, At-Risk, etc.)
-4. **Sales Performance Analysis** — revenue and order trends
+A 4-page interactive dashboard built on the same 793-customer RFM dataset.
+
+### 1. Executive Overview
+793 total customers, 2.30M total sales, 286.40K total profit, and a 45.27% churn rate (per the proxy definition) across regions and customer segments.
+
+![Executive Overview](Images/dashboard-executive-overview.jpg)
+
+### 2. Customer Churn Analysis
+359 churned vs. 434 retained customers. Churn concentrates heavily in the **At Risk** (127) and **Potential Loyalists** (116) segments — Champions show almost no churn, which is a strong sanity check on the segmentation.
+
+![Customer Churn Analysis](Images/dashboard-churn-analysis.jpg)
+
+### 3. Customer RFM Analysis
+Average recency of 121.28 days and average frequency of 7.36 orders across customers. Champions average 5.4K in monetary value vs. just 0.5K for Lost Customers — a clear value gradient across segments.
+
+![Customer RFM Analysis](Images/dashboard-rfm-analysis.jpg)
+
+### 4. Sales Performance Analysis
+Phones and Chairs are the top sub-categories by sales (0.33M each). Technology and Furniture lead by category-region split, and Standard Class dominates shipping mode at 59.12% of total sales.
+
+![Sales Performance Analysis](Images/dashboard-sales-performance.jpg)
 
 ## 💻 Streamlit App
 
-A live web app where a user enters Recency, Frequency, and Monetary values and receives:
-- Churn prediction (Churn / Not Churn)
-- Prediction probability
-- A short business explanation of the result
+A live web app where a user enters customer Recency, Frequency, and Monetary values and gets an instant churn prediction with a business recommendation.
+
+**Input form:**
+
+![Streamlit App Form](Images/streamlit-app-form.jpg)
+
+**Churn predicted** (low recency-value combination flagged as risk, with retention recommendations):
+
+![Churn Prediction](Images/streamlit-churn-prediction.jpg)
+
+**No churn predicted** (healthy recency/frequency/monetary combination, with growth recommendations):
+
+![Non-Churn Prediction](Images/streamlit-non-churn-prediction.jpg)
 
 ## 💡 Key Business Insights
 
-> Customize these with your actual notebook findings before publishing — placeholders below are typical RFM-driven insights to guide you.
-- A small segment of high-value, frequent customers ("Champions") drives a disproportionate share of revenue
-- Customers with high recency (long time since last order) show a sharply higher churn rate
-- At-risk customers can be identified before they fully disengage, enabling proactive retention offers
+- Churn is heavily concentrated in the **At Risk** and **Potential Loyalists** segments (127 and 116 churned customers respectively) — these are the two segments retention campaigns should target first
+- **Champions** (avg. 5.4K monetary value) drive a disproportionate share of revenue and show almost zero churn, confirming they need retention, not acquisition, spend
+- Average customer recency across the base is 121 days — customers who cross well beyond this without a repeat order are the clearest early warning sign
+- Phones and Chairs together account for the largest share of category sales, making them priority categories for churn-risk customers' win-back offers
+- Standard Class shipping accounts for 59% of total sales, suggesting shipping speed/cost is not a major churn driver relative to product engagement (recency/frequency)
 
 ## ⚠️ Project Limitation
 
-The original dataset did not contain a customer churn label. A **proxy churn label** was created using customer recency (customers inactive for more than 90 days were labeled churned). The high model accuracy reflects this proxy definition and should be interpreted in that context — not as ground-truth churn prediction. This is a documented, intentional trade-off given the dataset available.
+The original dataset did not contain a customer churn label. A **proxy churn label** was created using customer recency (customers inactive for more than 90 days were labeled churned). The feature importance chart shows `recency` and `r_score` alone account for over 80% of the model's predictive power — direct evidence that the model is largely learning the rule used to define the label. The high accuracy (99.37%) should be read in that context: it reflects how well the model recovers a recency-based rule, not ground-truth churn behavior. This is a documented, intentional trade-off given the dataset available, and one I'd resolve first with access to real subscription/contract-cancellation data.
 
 ## 🔮 Future Improvements
 
@@ -131,14 +161,6 @@ The original dataset did not contain a customer churn label. A **proxy churn lab
 - Track and report Streamlit prediction latency
 - Deploy the Streamlit app publicly (Streamlit Community Cloud)
 - Add automated retraining pipeline
-
-## 🖼️ Screenshots
-
-> Add screenshots to `Images/` and reference them here, e.g.:
-```
-![Power BI Executive Overview](Images/dashboard-executive-overview.png)
-![Streamlit App](Images/streamlit-app.png)
-```
 
 ## ⚙️ Setup & Usage
 
