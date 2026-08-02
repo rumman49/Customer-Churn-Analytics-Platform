@@ -128,17 +128,17 @@ Phones and Chairs are the top sub-categories by sales (0.33M each). Technology a
 
 ## 💻 Streamlit App
 
-A live web app where a user enters customer Recency, Frequency, and Monetary values and gets an instant churn prediction with a business recommendation.
+A live web app where a user enters a customer's Recency, Frequency, and Monetary values (with inline help tooltips) and gets an instant churn prediction, complete with a probability bar, confidence score, and tailored business recommendations.
 
 **Input form:**
 
 ![Streamlit App Form](Images/streamlit-app-form.jpg)
 
-**Churn predicted** (low recency-value combination flagged as risk, with retention recommendations):
+**Churn predicted** — probability bar and confidence score, plus recommended retention actions (targeted discount, personalized win-back email, direct rep outreach, priority support flag). Results can be downloaded, and the underlying customer dataset can be previewed inline:
 
 ![Churn Prediction](Images/streamlit-churn-prediction.jpg)
 
-**No churn predicted** (healthy recency/frequency/monetary combination, with growth recommendations):
+**No churn predicted** — high confidence of retention, with growth-oriented recommendations (loyalty rewards, premium/upsell suggestions, consistent engagement):
 
 ![Non-Churn Prediction](Images/streamlit-non-churn-prediction.jpg)
 
