@@ -5,6 +5,7 @@ An end-to-end data analytics project that predicts customer churn using RFM (Rec
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://customer-churn-analytics-platform-htduxknihzebrsypvldp7f.streamlit.app/)
 
 ---
 
@@ -69,7 +70,7 @@ Customer-Churn-Analytics-Platform/
 ├── PowerBI/               # .pbix dashboard file
 ├── Streamlit/             # app.py and Streamlit assets
 ├── Images/                # Diagrams, dashboard & app screenshots
-├── Reports/               # Any supporting write-ups
+├── Reports/                # Any supporting write-ups
 ├── README.md
 ├── requirements.txt
 └── LICENSE
@@ -128,6 +129,8 @@ Phones and Chairs are the top sub-categories by sales (0.33M each). Technology a
 
 ## 💻 Streamlit App
 
+🔗 **Live App:** [customer-churn-analytics-platform-htduxknihzebrsypvldp7f.streamlit.app](https://customer-churn-analytics-platform-htduxknihzebrsypvldp7f.streamlit.app/)
+
 A live web app where a user enters a customer's Recency, Frequency, and Monetary values (with inline help tooltips) and gets an instant churn prediction, complete with a probability bar, confidence score, and tailored business recommendations.
 
 **Input form:**
@@ -159,7 +162,6 @@ The original dataset did not contain a customer churn label. A **proxy churn lab
 - Train on a dataset with true churn labels (subscription or contract-based business)
 - Add SHAP-based explainability for individual predictions
 - Track and report Streamlit prediction latency
-- Deploy the Streamlit app publicly (Streamlit Community Cloud)
 - Add automated retraining pipeline
 
 ## ⚙️ Setup & Usage
@@ -179,7 +181,7 @@ streamlit run App/app.py
 ## 👤 Author
 
 **Romaan Uddin Siddiqui**
-[GitHub](https://github.com/rumman49) · [LinkedIn](#) · [Instagram](https://instagram.com/rumman_siddiqui_46)
+[GitHub](https://github.com/rumman49) · [LinkedIn](https://www.linkedin.com/in/romaan-siddiqui/) · [Instagram](https://instagram.com/rumman_siddiqui_46) · [Live App](https://customer-churn-analytics-platform-htduxknihzebrsypvldp7f.streamlit.app/)
 
 ## 📄 License
 
