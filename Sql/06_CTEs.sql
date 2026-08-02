@@ -42,9 +42,51 @@ ORDER BY avg_sales DESC;
 
 -- Question 3:
 -- Using a CTE, find the products whose total profit is below the overall average product profit.
+WITH product_summary AS (
+    SELECT
+        product_name,
+        SUM(profit) AS total_profit
+    FROM orders
+    GROUP BY product_name
+)
+SELECT
+    product_name,
+    total_profit
+FROM product_summary
+WHERE total_profit < (
+    SELECT AVG(total_profit) 
+    FROM product_summary
+);
+
 
 -- Question 4:
 -- Using a CTE, calculate total sales for each region and rank the regions from highest to lowest sales.
+WITH Region_sales as (
+SELECT 
+    region,
+    ROUND(sum(sales),2) as total_sales
+FROM orders
+GROUP BY region
+)
+
+SELECT
+    region,
+    total_sales,
+    rank() OVER(ORDER BY total_sales Desc) as sales_rank
+FROM Region_sales;
 
 -- Question 5:
 -- Using a CTE, identify customers whose total sales are greater than the overall average customer sales.
+WITH customer_sales AS(
+    SELECT 
+    customer_name,
+    SUM(sales) AS total_sales
+FROM orders
+GROUP BY customer_name
+)
+
+SELECT 
+    customer_name,
+    total_sales
+FROM customer_sales
+WHERE total_sales > (SELECT AVG(total_sales) FROM customer_sales)
