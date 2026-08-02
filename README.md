@@ -173,7 +173,7 @@ cd Customer-Churn-Analytics-Platform
 pip install -r requirements.txt
 
 # Run the Streamlit app
-streamlit run Streamlit/app.py
+streamlit run App/app.py
 ```
 
 ## 👤 Author
