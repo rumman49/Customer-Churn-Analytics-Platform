@@ -70,7 +70,6 @@ Customer-Churn-Analytics-Platform/
 ├── PowerBI/               # .pbix dashboard file
 ├── Streamlit/             # app.py and Streamlit assets
 ├── Images/                # Diagrams, dashboard & app screenshots
-├── Reports/                # Any supporting write-ups
 ├── README.md
 ├── requirements.txt
 └── LICENSE
